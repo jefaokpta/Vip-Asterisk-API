@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository
 import java.util.*
 
 interface PeerSetVarRepository: CrudRepository<PeerSetVar, UUID> {
+    fun findAllByIdSetVar(idSetVar: UUID): MutableIterable<PeerSetVar>
 }

@@ -10,6 +10,9 @@ class PeerController(val peerService: PeerService) {
     @GetMapping
     fun getAll() = peerService.getAllPeers()
 
+    @GetMapping("/{id}")
+    fun getById(@PathVariable id: String) = peerService.getPeerById(id)
+
     @PostMapping
     fun set(@RequestBody p: Peer) = peerService.setPeer(p)
 }

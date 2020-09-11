@@ -4,7 +4,9 @@ import org.hibernate.annotations.GenericGenerator
 import java.util.*
 import javax.persistence.*
 
-@Entity @Table(name = "peer_set_vars")
+@Entity @Table(name = "peer_set_vars", indexes = [
+    Index(name = "SETVAR_IDX", columnList = "idSetVar", unique = false)
+    ])
 class PeerSetVar (
         @Column(columnDefinition = "BINARY(16)")
         val idSetVar: UUID,
